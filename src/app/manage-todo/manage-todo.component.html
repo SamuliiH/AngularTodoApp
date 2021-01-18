@@ -1,0 +1,44 @@
+<form *ngIf="todo" [formGroup]="todoForm">
+
+  <mat-form-field class="full-width">
+    <mat-label>Subtitle</mat-label>
+    <input 
+      formControlName="subtitle" 
+      type="text" 
+      matInput 
+      value={{todoForm.value.subtitle}}
+      required >
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Text</mat-label>
+    <input 
+      formControlName="text" 
+      type="text" 
+      matInput 
+      value={{todoForm.value.text}}  
+      required >
+  </mat-form-field>
+
+  <button 
+    mat-raised-button 
+    color="primary" 
+    (click)="onSave()" 
+    [disabled]="todoForm.invalid">
+    Save
+  </button>
+
+  <button 
+    mat-raised-button 
+    (click)="onCompleted()">
+    Completed
+  </button>
+
+  <button 
+    mat-raised-button 
+    color="warn" 
+    (click)="onDelete()">
+    Delete
+  </button>
+
+</form>

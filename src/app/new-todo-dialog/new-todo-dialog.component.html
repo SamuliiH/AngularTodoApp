@@ -1,0 +1,40 @@
+<form class="todo-form" [formGroup]="todoForm">
+
+    <mat-form-field class="todo-width">
+      <mat-label>Subtitle</mat-label>
+      <input 
+        type="text"
+        formControlName="subtitle"
+        matInput 
+        placeholder="Subtitle"
+        required>
+    </mat-form-field>
+
+    <mat-form-field class="todo-width">
+      <mat-label>Todo text</mat-label>
+      <input 
+        type="text" 
+        formControlName="text"
+        matInput 
+        placeholder="Text" 
+        required >
+    </mat-form-field>
+
+    <button 
+      mat-raised-button
+      color="primary" 
+      type="button"
+      [disabled]="todoForm.invalid"
+      (click)="onSave()">
+      Save
+    </button>
+
+    <button 
+      mat-raised-button
+      color="warn"
+      type="button"
+      (click)="onUndo()">
+      Undo
+    </button>
+
+  </form>

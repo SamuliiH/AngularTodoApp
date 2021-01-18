@@ -1,0 +1,12 @@
+<mat-chip-list  class="mat-chip-list-stacked">
+    <div *ngFor="let todo of todoList">
+        <mat-chip 
+            routerLink="manage-todos/{{todo.id}}"
+            [color]="primary" 
+            [ngClass]="todo.completed && 'completed'"
+            selected >
+            {{todo.subtitle}}
+        </mat-chip>
+    </div>
+  </mat-chip-list>
+  
